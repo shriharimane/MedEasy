@@ -1,4 +1,4 @@
-MedEasy - Online Medicine Delivery Platform
+*******************MedEasy - Online Medicine Delivery Platform*******************
 
 Overview
 
