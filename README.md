@@ -1,16 +1,10 @@
-*******************MedEasy - Online Medicine Delivery Platform*******************
+# *******************MedEasy - Online Medicine Delivery Platform*******************
 
-Overview
+ ********Overview********
 
 MedEasy is an innovative online medicine delivery platform designed to streamline access to essential medications, making healthcare more convenient and user-friendly. By offering a comprehensive catalog of prescription and over-the-counter drugs, along with personalized medication management tools and telehealth integration, MedEasy empowers users to take control of their health from the comfort of their homes. With a commitment to data security, affordability, and exceptional customer support, MedEasy aims to enhance medication adherence and improve health outcomes for individuals and communities alike.
 
-Features
-
-Comprehensive Medicine Catalog: Browse and purchase prescription and over-the-counter medications.
-
-Personalized Medication Management: Set reminders and track medication intake.
-
-Telehealth Integration: Consult with healthcare professionals online.
+***Features***
 
 Secure Payment Processing: Integrated with Stripe for seamless transactions.
 
@@ -27,16 +21,15 @@ Order Placement: Place orders and provide delivery addresses.
 Order History: Track past orders and order statuses.
 
 Messaging System: Integrated with Mailtrap for notifications and communication.
-
 Responsive Design: Ensures the website works well on different devices and screen sizes.
 
-Technologies Used
 
-Frontend
+# Technologies Used
+****Frontend****
 
-React: For efficient UI development.
+**React:** For efficient UI development.
 
-React Router DOM: Enables navigation across the platform.
+**React Router DOM:** Enables navigation across the platform.
 
 Redux & Redux Toolkit: Manages application state effectively.
 
