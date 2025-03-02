@@ -39,17 +39,17 @@ React Input Range: Provides interactive UI elements.
 
 HTML, CSS, JavaScript: Core web development technologies for creating engaging interfaces.
 
-Backend
+****Backend****
 
-Node.js, Python, or Java: Handles server-side logic and data processing.
+**Node.js, Python, or Java:**  Handles server-side logic and data processing.
 
-MongoDB: NoSQL database for storing user and order data.
+**MongoDB:** NoSQL database for storing user and order data.
 
-Cloudinary: Manages image storage for products and user profiles.
+**Cloudinary:** Manages image storage for products and user profiles.
 
-Stripe: Ensures secure payment transactions.
+**Stripe:** Ensures secure payment transactions.
 
-Installation & Setup
+# Installation & Setup
 
 Prerequisites
 
