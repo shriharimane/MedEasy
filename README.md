@@ -1,60 +1,181 @@
-# *******************MedEasy - Online Medicine Delivery Platform*******************
+# MedEasy 💊
 
- ********Overview********
+A full-stack online medicine delivery platform that makes healthcare more accessible. Users can browse pharmacies, manage a cart, place orders, pay securely via Stripe, and track order history — all through a responsive, Redux-powered interface.
 
-MedEasy is an innovative online medicine delivery platform designed to streamline access to essential medications, making healthcare more convenient and user-friendly. By offering a comprehensive catalog of prescription and over-the-counter drugs, along with personalized medication management tools and telehealth integration, MedEasy empowers users to take control of their health from the comfort of their homes. With a commitment to data security, affordability, and exceptional customer support, MedEasy aims to enhance medication adherence and improve health outcomes for individuals and communities alike.
+---
 
-***Features***
+## Overview
 
-Secure Payment Processing: Integrated with Stripe for seamless transactions.
+MedEasy replicates a real-world e-commerce workflow applied to healthcare. The frontend is built with React and Redux Toolkit for predictable state management, while the backend handles authentication, order processing, image storage, and payment — following a RESTful, modular architecture. The project demonstrates end-to-end full-stack development from database schema to payment confirmation email.
 
-User Authentication: Sign up, log in, and manage user profiles, including password updates.
+---
 
-Browse Pharmacies: Display a list of medical stores with addresses and ratings, including search and filtering options.
+## Features
 
-View Products: Show available medicines with details, prices, and images.
+### User
+- Registration and login with secure authentication
+- Browse pharmacies and medicine listings
+- Search and filter products by name or category
+- View medicine details — price, image, and description
+- Add and remove items from cart
+- Place orders with a delivery address
+- View full order history and current order status
+- Fully responsive UI across all devices
 
-Cart Management: Add/remove items, adjust quantities, and view the cart.
+### Payments & Notifications
+- Secure checkout via **Stripe**
+- Order confirmation emails via **Mailtrap**
 
-Order Placement: Place orders and provide delivery addresses.
+---
 
-Order History: Track past orders and order statuses.
+## Tech Stack
 
-Messaging System: Integrated with Mailtrap for notifications and communication.
-Responsive Design: Ensures the website works well on different devices and screen sizes.
+| Layer | Technology |
+|---|---|
+| Frontend | React.js, Redux & Redux Toolkit, React Router DOM, Axios |
+| Styling | HTML5, CSS3, JavaScript, React Input Range |
+| Backend | Node.js (Express), MongoDB |
+| Image Storage | Cloudinary |
+| Payments | Stripe |
+| Email | Mailtrap |
 
+---
 
-# Technologies Used
-****Frontend****
+## Project Structure
 
-**React:** For efficient UI development.
+```
+MedEasy/
+│
+├── Database/
+│   ├── Internship.fooditems.json      # Seed data — medicine items
+│   ├── Internship.menus.json          # Seed data — menus
+│   └── Internship.restaurants.json   # Seed data — pharmacies
+│
+├── frontend/
+│   ├── public/
+│   │   ├── images/
+│   │   ├── favicon.ico
+│   │   └── index.html
+│   │
+│   └── src/
+│       ├── actions/                   # Redux action creators
+│       ├── components/                # Reusable UI components
+│       ├── constants/                 # Action type constants
+│       ├── reducer/                   # Redux reducers
+│       ├── store.js                   # Redux store configuration
+│       ├── App.jsx                    # Root component & routing
+│       └── index.js                   # React entry point
+│
+├── Backend-obfuscated/
+│   ├── config/                        # DB connection & environment config
+│   ├── controllers/                   # Business logic per route
+│   ├── middlewares/                   # Auth & validation middleware
+│   ├── models/                        # Mongoose database schemas
+│   ├── routes/                        # API route definitions
+│   ├── utils/                         # Helper / utility functions
+│   └── view/                          # View templates (if applicable)
+│
+├── menuReducer.js
+└── README.md
+```
 
-**React Router DOM:** Enables navigation across the platform.
+---
 
-Redux & Redux Toolkit: Manages application state effectively.
+## Getting Started
 
-Axios: Handles API requests.
+**Prerequisites:** Node.js 16+, npm, and a running MongoDB instance
 
-React Input Range: Provides interactive UI elements.
+### 1. Clone the repository
+```bash
+git clone <repository-url>
+cd MedEasy
+```
 
-HTML, CSS, JavaScript: Core web development technologies for creating engaging interfaces.
+### 2. Frontend setup
+```bash
+cd frontend
+npm install
+npm start
+```
+Runs at: [http://localhost:3000](http://localhost:3000)
 
-****Backend****
+### 3. Backend setup
+```bash
+cd Backend-obfuscated
+npm install
+npm start
+```
+Runs at: [http://localhost:5000](http://localhost:5000)
 
-**Node.js, Python, or Java:**  Handles server-side logic and data processing.
+### 4. Environment variables
 
-**MongoDB:** NoSQL database for storing user and order data.
+Create a `.env` file inside `Backend-obfuscated/`:
 
-**Cloudinary:** Manages image storage for products and user profiles.
+```env
+MONGO_URI=your_mongodb_connection_string
+STRIPE_SECRET_KEY=your_stripe_secret_key
+CLOUDINARY_URL=your_cloudinary_url
+MAILTRAP_USER=your_mailtrap_username
+MAILTRAP_PASS=your_mailtrap_password
+```
 
-**Stripe:** Ensures secure payment transactions.
+> **Note:** Never commit your `.env` file. It is already listed in `.gitignore`.
 
-# Installation & Setup
+---
 
-Prerequisites
+## Application Flow
 
-Node.js installed
+```
+Sign up / Log in
+      ↓
+Browse pharmacies & medicines
+      ↓
+Add items to cart
+      ↓
+Enter delivery address & place order
+      ↓
+Complete payment via Stripe
+      ↓
+Receive confirmation email (Mailtrap)
+      ↓
+Track order in order history
+```
 
-MongoDB database setup
+---
 
-VS Code or any preferred code editor
+## Concepts Demonstrated
+
+- Full-stack MERN architecture (MongoDB, Express, React, Node.js)
+- Redux & Redux Toolkit for global state management
+- RESTful API design with controllers, routes, and middleware
+- JWT-based authentication and protected routes
+- Stripe payment gateway integration
+- Cloudinary for cloud-based image storage
+- Email notifications with Mailtrap
+- Modular, scalable codebase organisation
+
+---
+
+## Roadmap
+
+- [ ] Prescription upload and verification system
+- [ ] Doctor consultation module
+- [ ] Admin dashboard for inventory and order management
+- [ ] Real-time order tracking
+- [ ] Push notifications
+- [ ] Mobile app version (React Native)
+
+---
+
+## Use Cases
+
+- Online pharmacy or healthcare e-commerce platform
+- Full-stack internship or placement showcase project
+- College major project with real-world integrations
+- MERN stack + payments reference implementation
+
+---
+
+## License
+
+MIT — free to use and adapt with attribution.
