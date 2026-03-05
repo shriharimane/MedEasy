@@ -4,7 +4,7 @@
   },
   "menu": [
     {
-      "category": "Chaats",
+      "category": "Tablets",
       "items": [
         "6671545ce1a78e67dc8c8d9e",
         "66715927e1a78e67dc8c8dad",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "category": "Main Course",
+      "category": "INJECTIONS ",
       "items": [
         "66716241e1a78e67dc8c8db5",
         "667162a9e1a78e67dc8c8db6",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "category": "Anytime",
+      "category": "essentials",
       "items": [
         {
           "$oid": "66715f1ae1a78e67dc8c8db1"
@@ -61,7 +61,7 @@
   },
   "menu": [
     {
-      "category": "Starter",
+      "category": "TABLETS",
       "items": [
         "6671720fe1a78e67dc8c8dd7",
         "6671720fe1a78e67dc8c8dd8",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "category": "Biryani",
+      "category": "INJECTIONS",
       "items": [
         "6671720fe1a78e67dc8c8dda",
         "6671720fe1a78e67dc8c8dd6",
@@ -85,7 +85,7 @@
       }
     },
     {
-      "category": "Dessert",
+      "category": "ESSENTIALS",
       "items": [
         "6671720fe1a78e67dc8c8ddc",
         "6671720fe1a78e67dc8c8ddb"
@@ -106,7 +106,7 @@
   },
   "menu": [
     {
-      "category": "Starter",
+      "category": "TABLETS",
       "items": [
         "6671610ea0215dd827e9d81b",
         "6671610ea0215dd827e9d81a",
@@ -118,7 +118,7 @@
       }
     },
     {
-      "category": "Biryani",
+      "category": "INJECTIONS",
       "items": [
         "6671610ea0215dd827e9d813",
         "6671610ea0215dd827e9d814"
@@ -128,7 +128,7 @@
       }
     },
     {
-      "category": "Gravy",
+      "category": "ESSENTIALS",
       "items": [
         "6671610ea0215dd827e9d815",
         "6671610ea0215dd827e9d816",
@@ -151,7 +151,7 @@
   },
   "menu": [
     {
-      "category": "KFC Meal",
+      "category": "TABLETS",
       "items": [
         "66716430bd4249c429fee76b",
         "66716430bd4249c429fee76c",
@@ -169,7 +169,7 @@
       }
     },
     {
-      "category": "Dessert",
+      "category": "INJECTIONS",
       "items": [
         "66716430bd4249c429fee775"
       ],
@@ -189,7 +189,7 @@
   },
   "menu": [
     {
-      "category": "Starter",
+      "category": "TABLETS",
       "items": [
         "667165d79850fd5166c810e5",
         "667165d79850fd5166c810e8",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "category": "Main Course",
+      "category": "INJECTIONS",
       "items": [
         "667165d79850fd5166c810e2",
         "667165d79850fd5166c810e4",
@@ -213,7 +213,7 @@
       }
     },
     {
-      "category": "Bread",
+      "category": "GROOMING",
       "items": [
         "667165d79850fd5166c810e3",
         "667165d79850fd5166c810e6"
@@ -234,7 +234,7 @@
   },
   "menu": [
     {
-      "category": "Starter",
+      "category": "TABLETS",
       "items": [
         "667176606b69467538f2497a",
         "667176606b69467538f24979",
@@ -245,7 +245,7 @@
       }
     },
     {
-      "category": "Main Course",
+      "category": "ESSENTIALS",
       "items": [
         "667176606b69467538f24981",
         "667176606b69467538f24980",
@@ -259,7 +259,7 @@
       }
     },
     {
-      "category": "Bread",
+      "category": "HAIR CARE",
       "items": [
         "667176606b69467538f2497e"
       ],
@@ -279,7 +279,7 @@
   },
   "menu": [
     {
-      "category": "Biryani Varities",
+      "category": "HAIRCARE",
       "items": [
         "66717b46e1a78e67dc8c8df2",
         "66717b46e1a78e67dc8c8df3",
@@ -308,7 +308,7 @@
   },
   "menu": [
     {
-      "category": "Sushi Varities",
+      "category": "INJECTIONS",
       "items": [
         "667158acc45b2f6c5ad027d0",
         "66715b14c45b2f6c5ad027da",

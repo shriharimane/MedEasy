@@ -7,7 +7,14 @@ const cloudinary = require("cloudinary").v2;
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 
-app.use(cors());
+// CORS configuration (connect frontend)
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());

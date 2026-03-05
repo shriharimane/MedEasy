@@ -6,9 +6,14 @@ import {
   UPDATE_CART_ITEM,
 } from "../constants/cartConstants";
 
+// Backend URL
+const API = "https://medeasy-pdaj.onrender.com";
+
+// Fetch Cart
 export const fetchCartItems = (alert) => async (dispatch) => {
   try {
-    const response = await axios.get("/api/v1/eats/cart/get-cart");
+    const response = await axios.get(`${API}/api/v1/eats/cart/get-cart`);
+
     dispatch({
       type: FETCH_CART,
       payload: response.data.data,
@@ -21,18 +26,21 @@ export const fetchCartItems = (alert) => async (dispatch) => {
   }
 };
 
-//ADD to Cart
+// ADD to Cart
 export const addItemToCart =
   (foodItemId, restaurant, quantity, alert) => async (dispatch, getState) => {
     try {
-      const { user } = getState().auth; // return the currnt store tree
-      const response = await axios.post("/api/v1/eats/cart/add-to-cart", {
+      const { user } = getState().auth;
+
+      const response = await axios.post(`${API}/api/v1/eats/cart/add-to-cart`, {
         userId: user._id,
         foodItemId,
         restaurantId: restaurant,
         quantity,
       });
-      alert.success("Item added to cart", response.data.cart);
+
+      alert.success("Item added to cart");
+
       dispatch({
         type: ADD_TO_CART,
         payload: response.data.cart,
@@ -42,8 +50,7 @@ export const addItemToCart =
     }
   };
 
-//Update cart Item quantity
-
+// Update Cart Item Quantity
 export const updateCartQuantity =
   (foodItemId, quantity, alert) => async (dispatch, getState) => {
     try {
@@ -53,11 +60,14 @@ export const updateCartQuantity =
         foodItemId = foodItemId._id;
       }
 
-      const response = await axios.post("/api/v1/eats/cart/update-cart-item", {
-        userId: user._id,
-        foodItemId: foodItemId,
-        quantity,
-      });
+      const response = await axios.post(
+        `${API}/api/v1/eats/cart/update-cart-item`,
+        {
+          userId: user._id,
+          foodItemId,
+          quantity,
+        }
+      );
 
       dispatch({
         type: UPDATE_CART_ITEM,
@@ -68,8 +78,7 @@ export const updateCartQuantity =
     }
   };
 
-// Remove items from cart
-
+// Remove Item from Cart
 export const removeItemFromCart =
   (foodItemId) => async (dispatch, getState) => {
     try {
@@ -80,16 +89,17 @@ export const removeItemFromCart =
       }
 
       const response = await axios.delete(
-        "/api/v1/eats/cart/delete-cart-item",
+        `${API}/api/v1/eats/cart/delete-cart-item`,
         {
           data: { userId: user._id, foodItemId },
         }
       );
+
       dispatch({
         type: REMOVE_ITEM_CART,
         payload: response.data,
       });
     } catch (error) {
-      alert.error(error.response ? error.response.data.message : error.message);
+      console.error(error);
     }
   };
