@@ -7,27 +7,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, myOrders } from "../../actions/orderAction";
 import { getRestaurants } from "../../actions/restaurantAction";
 import { Link } from "react-router-dom";
+
 const ListOrders = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
+
   const { loading, error, orders } = useSelector((state) => state.myOrders);
-  const restaurants = useSelector((state) => state.restaurants);
-  const restaurantList = Array.isArray(restaurants.restaurants)
-    ? restaurants.restaurants
-    : [];
+  const { restaurants } = useSelector((state) => state.restaurants);
+
+  const restaurantList = Array.isArray(restaurants) ? restaurants : [];
+
   useEffect(() => {
     dispatch(myOrders());
     dispatch(getRestaurants());
+
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
   }, [dispatch, alert, error]);
+
   const setOrders = () => {
     const data = {
       columns: [
         {
-          label: "MEDICILE  Name",
+          label: "MEDICINE Name",
           field: "restaurant",
           sort: "asc",
         },
@@ -41,7 +45,6 @@ const ListOrders = () => {
           field: "numOfItems",
           sort: "asc",
         },
-
         {
           label: "Amount",
           field: "amount",
@@ -65,26 +68,33 @@ const ListOrders = () => {
       ],
       rows: [],
     };
+
     if (orders && orders.length > 0 && restaurantList.length > 0) {
-      const sortedOrders = orders.sort(
+      const sortedOrders = [...orders].sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
+
       sortedOrders.forEach((order) => {
         const orderItemNames = order.orderItems
           .map((item) => item.name)
-          .join(",");
+          .join(", ");
+
         const restaurant = restaurantList.find(
-          (restaurant) => restaurant._id.toString() === order.restaurant._id
+          (r) => r._id.toString() === order.restaurant?._id
         );
+
         data.rows.push({
-          restaurant: restaurant?.name || "unknown Restaurant",
+          restaurant: restaurant?.name || "Unknown Restaurant",
+
           numOfItems: order.orderItems.length,
+
           amount: (
             <span>
               <FaRupeeSign />
               {order.finalTotal}
             </span>
           ),
+
           status:
             order.orderStatus &&
             String(order.orderStatus).includes("Delivered") ? (
@@ -92,8 +102,11 @@ const ListOrders = () => {
             ) : (
               <p style={{ color: "red" }}>{order.orderStatus}</p>
             ),
+
           orderItems: orderItemNames,
+
           orderDate: new Date(order.createdAt).toLocaleDateString(),
+
           actions: (
             <Link to={`/eats/orders/${order._id}`}>
               <FaRegEye />
@@ -102,26 +115,26 @@ const ListOrders = () => {
         });
       });
     }
+
     return data;
   };
-  return (
-    <>
-      <div className="cartt">
-        <h1 className="my-5">My Orders</h1>
 
-        {loading ? (
-          <Loader />
-        ) : (
-          <MDBDataTable
-            data={setOrders()}
-            className="px-3"
-            bordered
-            striped
-            hover
-          />
-        )}
-      </div>
-    </>
+  return (
+    <div className="cartt">
+      <h1 className="my-5">My Orders</h1>
+
+      {loading ? (
+        <Loader />
+      ) : (
+        <MDBDataTable
+          data={setOrders()}
+          className="px-3"
+          bordered
+          striped
+          hover
+        />
+      )}
+    </div>
   );
 };
 
